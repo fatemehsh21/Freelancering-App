@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TextField from "../../ui/TextField";
 import Loader from "../../ui/Loader";
 
-function SendOTPForm({ isSendOtp, onSubmit, phoneNumber, onChange }) {
+function SendOTPForm({ isSendOtp, onSubmit, register }) {
   return (
     <div>
       <form className="space-y-10" onSubmit={onSubmit}>
@@ -10,12 +10,14 @@ function SendOTPForm({ isSendOtp, onSubmit, phoneNumber, onChange }) {
           <TextField
             label="شماره موبایل"
             name="phonenumber"
-            value={phoneNumber}
-            onChange={onChange}
+            required
+            // value={phoneNumber}
+            // onChange={onChange}
+            {...register("phonenumber")}
           />
         </div>
         <div>
-          {isPending ? (
+          {isSendOtp ? (
             <Loader />
           ) : (
             <button type="submit" className="btn btn--primary w-full">

@@ -9,11 +9,11 @@ function SendOTPForm({ isSendOtp, onSubmit, register }) {
         <div>
           <TextField
             label="شماره موبایل"
-            name="phonenumber"
+            name="phoneNumber"
             required
+            register={register}
             // value={phoneNumber}
             // onChange={onChange}
-            {...register("phonenumber")}
           />
         </div>
         <div>

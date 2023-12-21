@@ -8,6 +8,7 @@ import ProjectRow from "./ProjectRow";
 
 function ProjectTable() {
   const { isLoading, projects } = useOwnerProjects();
+
   if (isLoading) return <Loader />;
   if (!projects.length) return <Empty resourceName="پروژه" />;
   return (
@@ -22,6 +23,7 @@ function ProjectTable() {
         <th>فریلنسر</th>
         <th>وضعیت</th>
         <th>عملیات</th>
+        <th>درخواست ها</th>
       </Table.Header>
       <Table.Body>
         {projects.map((project, index) => (

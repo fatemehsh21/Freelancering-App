@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 
 function AuthContainer() {
   const [step, setStep] = useState(2);
-  const [phoneNumber, setPhoneNumber] = useState("09130859584");
   const { register, handleSubmit, getValues } = useForm();
   const {
     isPending: isSendOtp,
@@ -21,7 +20,7 @@ function AuthContainer() {
 
   const sendOtpHandler = async (data) => {
     try {
-      const { message } = await mutateAsync({ phoneNumber });
+      const { message } = await mutateAsync(data);
       setStep(2);
       toast.success(message);
     } catch (err) {

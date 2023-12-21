@@ -9,7 +9,12 @@ import { CiEdit } from "react-icons/ci";
 import Loader from "../../ui/Loader";
 const RESEND_TIME = 90;
 
-function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
+function CheckOTPForm({
+  phoneNumber = "09130859584",
+  onBack,
+  onReSendOtp,
+  otpResponse,
+}) {
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
   const [time, setTime] = useState(RESEND_TIME);
@@ -33,6 +38,7 @@ function CheckOTPForm({ phoneNumber, onBack, onReSendOtp, otpResponse }) {
     e.preventDefault();
     try {
       const { message, user } = await mutateAsync({ phoneNumber, otp });
+      console.log(message, user);
       toast.success(message);
       if (!user.isActive) return navigate("/complete-profile");
       if (user.status !== 2) {

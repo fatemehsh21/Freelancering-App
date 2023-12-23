@@ -2,15 +2,16 @@ import React from "react";
 import useProject from "../features/project/useProject";
 import Loader from "../ui/Loader";
 import ProjectHeader from "../features/project/ProjectHeader";
-import ProposalTable from "../features/project/ProposalTable";
+import ProposalsTable from "../features/project/ProposalsTable";
 
 function Project() {
   const { isLoading, project } = useProject();
+  console.log(project);
   if (isLoading) return <Loader />;
   return (
     <div>
       <ProjectHeader project={project} />
-      <ProposalTable proposal={project.proposal} />
+      <ProposalsTable proposals={project.proposal} />
     </div>
   );
 }

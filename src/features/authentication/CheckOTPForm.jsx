@@ -38,7 +38,6 @@ function CheckOTPForm({
     e.preventDefault();
     try {
       const { message, user } = await mutateAsync({ phoneNumber, otp });
-      console.log(message, user);
       toast.success(message);
       if (!user.isActive) return navigate("/complete-profile");
       if (user.status !== 2) {
@@ -51,7 +50,6 @@ function CheckOTPForm({
       if (user.role === "OWNER") return navigate("/owner");
       if (user.role === "FREELANCER") return navigate("/freelancer");
     } catch (error) {
-      console.log(error);
       toast.error(error?.response?.data?.message);
     }
   };

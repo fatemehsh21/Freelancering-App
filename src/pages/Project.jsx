@@ -6,12 +6,11 @@ import ProposalsTable from "../features/project/ProposalsTable";
 
 function Project() {
   const { isLoading, project } = useProject();
-  console.log(project);
   if (isLoading) return <Loader />;
   return (
     <div>
       <ProjectHeader project={project} />
-      <ProposalsTable proposals={project.proposal} />
+      <ProposalsTable proposals={project.proposals} />
     </div>
   );
 }

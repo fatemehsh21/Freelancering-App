@@ -5,7 +5,7 @@ import useMoveBack from "../../hooks/useMoveBack";
 
 function ProjectHeader({ project }) {
   const moveBack = useMoveBack();
-  if (!project.length) return <Empty resourceName="درخواستی" />;
+  // if (!project.length) return <Empty resourceName="درخواستی" />;
   return (
     <div className="flex items-center gap-x-4 mb-8">
       <button onClick={moveBack}>

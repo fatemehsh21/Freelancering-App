@@ -17,3 +17,7 @@ export function completePofile(data) {
 export function getUser() {
   return http.get("/user/profile").then(({ data }) => data.data);
 }
+
+export function logoutApi() {
+  return http.get("/user/logout").then(({ data }) => data.data);
+}

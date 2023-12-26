@@ -20,7 +20,7 @@ function ProjectRow({ index, project }) {
     <Table.Row>
       <td>{index + 1}</td>
       <td>
-        <p>{truncateText(project.title)}</p>{" "}
+        <p>{truncateText(project.title, 30)}</p>{" "}
       </td>
       <td>{project.category.title}</td>
       <td>{toPersianNumbersWithComma(project.budget)}</td>

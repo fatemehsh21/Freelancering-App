@@ -1,5 +1,3 @@
-import React from "react";
-
 function DashboardHeader() {
   return (
     <div className="mb-6">

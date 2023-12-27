@@ -1,6 +1,6 @@
 import Stats from "./Stats";
 import useProposals from "../proposals/useProposals";
-import DashboardHeader from "./DashboardHeader";
+import DashboardHeader from "../../ui/DashboardHeader";
 import Loader from "../../ui/Loader";
 
 function DashboardLayout() {

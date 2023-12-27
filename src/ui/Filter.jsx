@@ -12,7 +12,7 @@ function Filter({ filterField, options }) {
   return (
     <div className="flex items-center gap-x-2 text-xs">
       <span>وضعیت</span>
-      <div className="flex items-center gap-x-2 p-1 border border-secondary-100 bg-secondary-0 p-1 rounded-lg">
+      <div className="flex items-center gap-x-2 p-1 border border-secondary-100 bg-secondary-0 rounded-lg">
         {options.map((item) => {
           const isActive = item.value === currentFilter;
           return (

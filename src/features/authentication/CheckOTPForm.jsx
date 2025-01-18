@@ -10,7 +10,7 @@ import Loader from "../../ui/Loader";
 const RESEND_TIME = 90;
 
 function CheckOTPForm({
-  phoneNumber = "09130859584",
+  phoneNumber = "09131111111",
   onBack,
   onReSendOtp,
   otpResponse,
